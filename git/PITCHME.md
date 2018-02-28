@@ -4,12 +4,18 @@ and how to use it
 
 ---
 
+# Part One
+
+Overview of terminology, basic use and commands
+
+---
+
 ## RCS, VCS, SVC, SVM, SCM?!
 
 * Version Control System
 * Software Version Control
 * Revision Control System
-* Software Versom Management
+* Software Version Management
 * Software Configuration Management
 * Software Change Management?
 * Source Code Management?!
@@ -34,6 +40,7 @@ Here is a SO that explains it more: https://stackoverflow.com/questions/5872136/
 
 Note:
 
+* Name is a play on the slang term
 * Git was self hosted a day after release
 * Merges into Git with Git happened a week later
 * Achieved all performance goals
@@ -59,6 +66,7 @@ https://en.wikipedia.org/wiki/Git#History
 Note:
 
 * Any file with some config (git-lfs)
+* https://git-lfs.github.com/
 
 ---
 
@@ -256,4 +264,32 @@ You can see these slides at this URL or at https://github.com/codeyql/talks
 
 ---
 
-### Part Two, How not to rebase
+# Part Two
+
+Exploring Rebasing, Changing History and Merge Conflicts
+
+---
+
+* What is Rebasing
+* Command Overview
+  * Flags
+    * -i --interactive
+    * --onto
+    * -p --preserve-merges
+    * -m --merge
+  * Merge Strategies
+    * Recursive (default)
+    * Octopus
+    * Ours
+* Rebasing with master
+* Rebasing onto a branch
+* Rebasing with HEAD
+* Dealing With Conflicts
+  * General Format
+  * "Ours" and "Theirs" (Incoming, Current)
+  * Merge Conflict Tools
+* Questions
+* Resources
+  * Asciinema
+  * carbon.now.sh
+  * gittalks

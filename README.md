@@ -6,10 +6,14 @@
 
 | Talk Name            | Presented On                    | Link             | Description                     |
 |----------------------|---------------------------------|------------------|---------------------------------|
+| Git (Part 2)         | [April 24, 2018][meetup-git-2]  | [link][git-2]      | The git workshop content        |
 | Git                  | [Feb 27, 2018][meetup-git]      | [link][git]      | The git workshop content        |
 | Chatbots & AI        | [Oct 17, 2016][meetup-chatbots] | [link][chatbots] | Our AI overlords are here!      |
 | Open Data            | [Mar 22, 2016][meetup-opendata] | [link][opendata] | Intro to Lethbridge Open Data   |
 | Syntax vs. Semantics | ???                             | [link][syntax]   | Programming languages, and you! |
+
+[meetup-git-2]: https://www.meetup.com/CodeYQL/events/249137357/
+[git-2]: https://gitpitch.com/codeyql/talks/master?p=git#/24
 
 [meetup-git]: https://www.meetup.com/CodeYQL/events/247301913/
 [git]: https://gitpitch.com/codeyql/talks/master?p=git#/
