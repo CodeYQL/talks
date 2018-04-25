@@ -253,3 +253,7 @@ You can see these slides at this URL or at https://github.com/codeyql/talks
 
 * Cheatsheet: https://gist.github.com/hofmannsven/6814451
 * Presentation Platform: https://gitpitch.com
+
+---
+
+### Part Two, How not to rebase
