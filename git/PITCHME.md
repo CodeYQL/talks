@@ -1,6 +1,12 @@
-# Git
+l# Git
 
 and how to use it
+
+---
+
+# Part One
+
+Overview of terminology, basic use and commands
 
 ---
 
@@ -9,7 +15,7 @@ and how to use it
 * Version Control System
 * Software Version Control
 * Revision Control System
-* Software Versom Management
+* Software Version Management
 * Software Configuration Management
 * Software Change Management?
 * Source Code Management?!
@@ -34,6 +40,7 @@ Here is a SO that explains it more: https://stackoverflow.com/questions/5872136/
 
 Note:
 
+* Name is a play on the slang term
 * Git was self hosted a day after release
 * Merges into Git with Git happened a week later
 * Achieved all performance goals
@@ -59,6 +66,7 @@ https://en.wikipedia.org/wiki/Git#History
 Note:
 
 * Any file with some config (git-lfs)
+* https://git-lfs.github.com/
 
 ---
 
@@ -253,3 +261,157 @@ You can see these slides at this URL or at https://github.com/codeyql/talks
 
 * Cheatsheet: https://gist.github.com/hofmannsven/6814451
 * Presentation Platform: https://gitpitch.com
+
+---
+
+# Part Two
+
+Exploring Rebasing, Changing History and Merge Conflicts
+
+---
+
+## What is Rebasing
+
+<!-- ![git rebase origin master](git/git-rebase-origin-master.png) -->
+
+* Useful tool for mananging branches of code
+* Moving changes around within the history
+* Removing, renaming, combining commits
+
+Note:
+
+* Any project with branches will need to move commits
+* Moving to a new 'parent' commit
+
+---
+
+## The Rebase Command
+
+<!-- ![git rebase help](git/git-rebase-help.png) -->
+
+* tonnes of options
+* can be as simple or as complicated as needed
+* best used on local branches __before pushed to the remote__
+
+> "With great power comes great responisiblity - uncle ben" - michael scott
+
+Note:
+
+* Merging, interactive, onto, keep merges
+* you can fuck shit up with ease
+
+---
+
+## Flag Overview
+
+---
+
+### `-i --interactive`
+
+<!-- ![git rebase interactive](git/git-rebase-interactive.png) -->
+
+_rebase-interactive.cast_
+---
+
+### `--onto`
+
+* Changes the base of the branch you are targeting
+
+`git rebase --onto master next topic`
+
+* master is the target
+* next is previous root
+* topic is the branch you are using
+
+---
+
+### `-p --preserve-merges`
+
+`git rebase master --preserve-merges`
+
+* tries to preserve the merge commits and actions from previous merges
+* for keeping history, if rebasing and then merging into same branch (otherwise you lose the merge commits)
+
+---
+
+## Merge Strategies
+
+---
+
+### Recursive (default)
+
+* uses three-way merge ([inspects changes](https://stackoverflow.com/a/4129145))
+* ours / theirs strategies
+
+---
+
+### Octopus
+
+* useful for merging feature branches
+* add mutliple feature branches into a release branch
+
+---
+
+### Ours
+
+* keeps history but throw away __all__ changes made in other branch
+* commits will be there, but nothing else
+
+---
+
+## Rebasing with master
+
+---
+
+## Rebasing onto a branch
+
+---
+
+## Rebasing with HEAD
+
+---
+
+## Dealing With Conflicts
+
+---
+
+### General Format
+
+* two versions of code have changed the same lines, we cant merge them together without making a decision
+* adds lines to your code, displays both conflicting versions
+
+```text
+If you have isues please
+<<<<<<< BASE_BRANCH
+open an issue.
+=======
+ask your question in slack.
+>>>>>>> OTHER_BRANCH
+```
+
+* `BASE_BRANCH` is _your_ version - might display `HEAD`
+* `OTHER_BRANCH` is _their_ version
+
+---
+
+### "Current" and "Incoming" (Yours, Theirs)
+
+* If you are merging into _your_ branch, your change is `current`
+* If you are merging into _their branch_ (or master), your change is `incoming`
+
+---
+
+## Questions
+
+---
+
+## Tools Used for this talk
+
+* Asciinema
+* gitpitch
+
+<!-- * carbon.now.sh -->
+
+---
+
+# Contribute your own talk
