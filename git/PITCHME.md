@@ -1,4 +1,4 @@
-l# Git
+# Git
 
 and how to use it
 
@@ -10,7 +10,7 @@ Overview of terminology, basic use and commands
 
 ---
 
-## RCS, VCS, SVC, SVM, SCM?!
+## RCS, VCS, SVC, SVM, SCM
 
 * Version Control System
 * Software Version Control
@@ -52,9 +52,9 @@ https://en.wikipedia.org/wiki/Git#History
 
 ## Uses
 
-#### _Software Verson Control_
+### _Software Verson Control_
 
-**Control, backup, archive non-binary files**
+#### Control, backup, archive non-binary files
 
 * Track Changes
 * Upload to mulitple sources
@@ -70,20 +70,11 @@ Note:
 
 ---
 
-## Follow Along Tutorial
-
-#### try.github.io
-
-And the cheatsheet reference you might want to save
-https://gist.github.com/hofmannsven/6814451
-
----
-
 # Command Overview
 
 ---
 
-### `git init`
+## `git init`
 
 > Initialize a git repository inside a folder
 
@@ -91,7 +82,7 @@ https://gist.github.com/hofmannsven/6814451
 
 ---
 
-### `git status`
+## `git status`
 
 > See the status of your repository
 
@@ -101,7 +92,7 @@ https://gist.github.com/hofmannsven/6814451
 
 ---
 
-### `git add`
+## `git add`
 
 > Add files to your next commit
 
@@ -111,7 +102,7 @@ https://gist.github.com/hofmannsven/6814451
 
 ---
 
-### `git reset`
+## `git reset`
 
 > Remove all files from your next commit
 
@@ -121,18 +112,18 @@ https://gist.github.com/hofmannsven/6814451
 
 ---
 
-### `git commit`
+## `git commit`
 
 > Commit your changes to the history
 
 * Now its for real
-* The commit is added to the history
-* Your changes are not staged anymore
+* Records the commit into the history
+* Your changes are not 'staged' anymore
 * You can now push to a remote
 
 ---
 
-### `git checkout`
+## `git checkout`
 
 > Checkout version, commit, tag, in your history
 
@@ -142,12 +133,12 @@ https://gist.github.com/hofmannsven/6814451
 
 ---
 
-### `git tag`
+## `git tag`
 
 > Add a 'checkpoint' to reference
 
 * reference a point in your history
-* very commonly used for versions
+* commonly used for versions
 * can attach information to a tag
 
 Note:
@@ -156,12 +147,12 @@ Note:
 
 ---
 
-### `git log`
+## `git log`
 
 > Print the history
 
 * Shows you the history of your repository, along with the hashes
-* Can be formatted
+* Formatting available
 * Shows authors as well
 
 Note:
@@ -170,7 +161,7 @@ Note:
 
 ---
 
-### `git diff`
+## `git diff`
 
 > Show the changes or differences between commits
 
@@ -227,7 +218,7 @@ You can use HTTPS if you like typing in passwords
 * You aren't going to remember what you wanted to say
 * So say what you wanted to say
 * Don't get lazy, commitments are forever
-* Commits are for both humans and computers
+* Commit messages can be for both humans and computers
   _but more for humans_
 
 Note:
@@ -237,36 +228,19 @@ Note:
 
 ---
 
-### Some real life commits
-
-* [This one is by me](https://github.com/forstermatth/sa-puppies/commits/master)
-* [This one is in a joke repo](https://github.com/Donohue/Shamebot/commits/master)
-* [This might be malicous code](https://github.com/caseyscarborough/keylogger/commits/master)
-
----
-
 ## Commit Standards
 
 > https://conventionalcommits.org/
 
-* Started by angular
+* Started by angular (google)
 * Used by lots of people now
 * Also, tools use it to create changelogs automatically
 
 ---
 
-# Resources
-
-You can see these slides at this URL or at https://github.com/codeyql/talks
-
-* Cheatsheet: https://gist.github.com/hofmannsven/6814451
-* Presentation Platform: https://gitpitch.com
-
----
-
 # Part Two
 
-Exploring Rebasing, Changing History and Merge Conflicts
+Exploring Rebasing, History and Merge Conflicts
 
 ---
 
@@ -274,7 +248,7 @@ Exploring Rebasing, Changing History and Merge Conflicts
 
 <!-- ![git rebase origin master](git/git-rebase-origin-master.png) -->
 
-* Useful tool for mananging branches of code
+* Useful tool for managing branches of code
 * Moving changes around within the history
 * Removing, renaming, combining commits
 
@@ -293,7 +267,7 @@ Note:
 * can be as simple or as complicated as needed
 * best used on local branches __before pushed to the remote__
 
-> "With great power comes great responisiblity - uncle ben" - michael scott
+> "With great power comes great responsibility - uncle ben" - michael scott
 
 Note:
 
@@ -308,9 +282,12 @@ Note:
 
 ### `-i --interactive`
 
-<!-- ![git rebase interactive](git/git-rebase-interactive.png) -->
+`git rebase -i`
 
-_rebase-interactive.cast_
+* Introduces an interactive 'middle' step
+* Allows for reordering, renaming, removing, merging commits
+* Useful for updating a branch before submitting it for review
+
 ---
 
 ### `--onto`
@@ -348,7 +325,7 @@ _rebase-interactive.cast_
 ### Octopus
 
 * useful for merging feature branches
-* add mutliple feature branches into a release branch
+* add feature branches into a release branch
 
 ---
 
@@ -377,16 +354,16 @@ _rebase-interactive.cast_
 
 ### General Format
 
-* two versions of code have changed the same lines, we cant merge them together without making a decision
-* adds lines to your code, displays both conflicting versions
+* two versions have changed the same lines, we cant merge them together without making a decision
+* adds lines to the files, displays both conflicting versions
 
 ```text
 If you have isues please
-<<<<<<< BASE_BRANCH
+<<<<<<< BASE_BRANCH (Current Change)
 open an issue.
 =======
 ask your question in slack.
->>>>>>> OTHER_BRANCH
+>>>>>>> OTHER_BRANCH (Incoming Change)
 ```
 
 * `BASE_BRANCH` is _your_ version - might display `HEAD`
@@ -399,19 +376,11 @@ ask your question in slack.
 * If you are merging into _your_ branch, your change is `current`
 * If you are merging into _their branch_ (or master), your change is `incoming`
 
+Note:
+
+The branch that you are merging into is always the current. To merge in a branch you were working on,
+you would have to move to the base branch first.
+
 ---
 
 ## Questions
-
----
-
-## Tools Used for this talk
-
-* Asciinema
-* gitpitch
-
-<!-- * carbon.now.sh -->
-
----
-
-# Contribute your own talk
